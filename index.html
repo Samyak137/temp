@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="age">firstname</label>
+        <input type="text" id="firstname" required>
+        <input type="text" id="lastname" required>
+        <input type="text" id="age" required>
+        <button id="submit" > Submit </button>
+        <div id="result"></div>
+        <div id="eligible"></div>
+        <div id="not_eligible"></div>
+    </div>
+    
+</body>
+<script>
+    let firstname,lastname,age,result,eligible,not_eligible  ;
+    function details()
+    {
+      
+
+      firstname=document.getElementById("firstname").value;
+      
+      lastname=document.getElementById("lastname").value;
+      
+      age=document.getElementById("age").value;
+
+      result = "Your name is " + firstname + lastname + "and your age" + age;
+      document.getElementById("result").innerHTML = result
+      console.log(result);
+      condition()
+
+     
+    }
+    document.getElementById("submit").addEventListener("click", details)
+
+    function condition()
+    {
+        if(age>18){
+        eligible = "You are eligible";
+        document.getElementById("eligible").innerHTML = eligible
+        document.body.style.backgroundColor='green';
+        }
+
+        else
+        {
+        not_eligible = "You are not eligible";
+        document.getElementById("not_eligible").innerHTML = not_eligible
+        document.body.style.backgroundColor='red';
+        }
+
+    }
+    condition();
+    
+    </script>
+</html>
